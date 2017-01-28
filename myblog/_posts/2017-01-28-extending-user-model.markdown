@@ -26,7 +26,7 @@ Now in the shell you can do:
 >>> jessica_instagram_handle = u.userprofile.insta_handle
 {% endhighlight %}
 
-As you can see, it is not a special model in any way; it is simply is a normal Django model that happens to have a one-to-one relationship to the User Model through a OnetoOneField and it will have it’s own database table. Because UserProfile is just another model, it will not automatically be updated when a new user is created. To do this automatically you will need to use Django signals to listen for the User’s post_save event and update the UserProfile instance when it happens (the Django docs are beautiful. Just Google “Django signals post_save” and you’ll be good.)
+As you can see, it is not a special model in any way; it is simply is a normal Django model that happens to have a one-to-one relationship to the User Model through a OnetoOneField and it will have it’s own database table. Because UserProfile is just another model, it will not automatically be updated when a new user is created. To do this automatically you will need to use Django signals to listen for the User’s post_save event and update the UserProfile instance when it happens (the Django docs are [beautiful][django-docs])
 
 As a side note, the code above is for Dango 1.10. If you are like me and have been using Django 1.8 or before, `on_delete` can now be used as the second positional argument (previously it was typically only passed as a keyword argument). It’s not required, but it will be in Django 2.0 so I’d start using it and checkout what the options for it are. I used CASCADE here which tells Django: “When the referenced object is deleted, also delete the objects that have references to it”.
 
@@ -94,3 +94,5 @@ class BlogPost(models.Model):
 You most likely don’t need this option. It is similar to #3 in that it significantly changes your database schema (so be careful!) but the new model inherits from AbstractBaseUser. People do this when their project has specific requirements relating to the authentication process. Because it allows you to change how the authentication process works and you can add extra info related to the User, it is technically the more powerful option, but it’s pretty easy to do something you actually didn’t want, so you have to be careful. 
 
 That’s it! 👋 
+
+[django-docs]: https://docs.djangoproject.com/en/1.10/ref/signals/#post-save
