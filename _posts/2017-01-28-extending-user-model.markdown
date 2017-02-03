@@ -3,6 +3,16 @@ layout: post
 title:  "Extending Django's User Model"
 date:   2017-01-28 09:55:21 -0800
 categories: python
+style: |
+  .post-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .post-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+  }
 ---
 
 Django’s built-in user authentication system is awesome. It handles both authentication and authorization, but for many of your projects you’ll want to extend and customize it. One of the main reasons you will want to customize the built-in system is to store more data related to the User. For example, you might want to store the user’s city, or her instagram handle. There are different ways to extend the User Model. There is no general “best” or “worst” option; the best option will depend on your project and how far along in building it you are.
