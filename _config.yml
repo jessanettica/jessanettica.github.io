@@ -16,13 +16,11 @@
 title: HolaHuman
 email: helloHolaHuman@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Python, JavaScript, and random thoughts on the intersection of Art and Science. #nerdalert
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "holahuman.com" # the base hostname & protocol for your site, e.g. http://example.com
-instagram_username: jessanettica
-github_username:  jessanettica
+instagram_username: holahuman
+twitter_username:  helloHolaHuman
 
 # Build settings
 markdown: kramdown
