@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Up, up, and away!"
+title:  "Hoisting"
 date:   2017-01-29 09:55:21 -0800
-categories: python
+categories: javascript
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
