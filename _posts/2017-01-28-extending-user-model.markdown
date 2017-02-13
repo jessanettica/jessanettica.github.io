@@ -7,7 +7,6 @@ style: |
   .post-title {
     font-family: 'Playfair Display', serif;
     font-size: 45px;
-    font-weight: bold;
   }
   .post-content p {
     font-family: 'Pontano Sans', sans-serif;

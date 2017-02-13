@@ -200,6 +200,6 @@ if blog_posts.exists():
 
 &nbsp;
 
-Ok, that’s it. I’m off to get a snack, but the next post will be on query optimization. 👋 
+Ok, that’s it. I’m off to get a snack, but keep an eye out for a future post on query optimization. 👋 
 
 
