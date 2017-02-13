@@ -5,7 +5,7 @@ date:   2017-01-28 09:55:21 -0800
 categories: python
 style: |
   .post-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 45px;
     font-weight: bold;
   }
