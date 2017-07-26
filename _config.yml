@@ -16,7 +16,7 @@
 title: HolaHuman
 email: helloHolaHuman@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Python, JavaScript, and random thoughts on the intersection of Art and Science. #nerdalert
+  Python, JavaScript, and random thoughts on the intersection of Art and Science from @jessanettica. #nerdalert
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "holahuman.com" # the base hostname & protocol for your site, e.g. http://example.com
 instagram_username: holahuman
