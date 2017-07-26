@@ -68,9 +68,9 @@ https://www.eventbriteapi.com/v3/users/me/?token=MYTOKEN
 
 4
 
- The Eventbrite API’s response is JSON. You can use the response however you want. For example, if you had a little user profile section in your app you can use the above data to display your name and email. 
+The Eventbrite API’s response is JSON. You can use the response however you want. For example, if you had a little user profile section in your app you can use the above data to display your name and email. 
 
-Let’s look at a more realistic example of what you might have when you’re building out an app. The following code combines steps 2, 3, and 4. I took it from a view function in a side project I made a while back (you can look at the whole thing [here][eventbrite-ex]) 
+Let’s look at a more realistic example of what you might have when you’re building out an app. The following code combines steps 2, 3, and 4. I took it from a view function in a side project I made a while back (you can look at the whole thing [here][eventbrite-ex]). 
 
 {% highlight python %}
 def sf_experience(category):
