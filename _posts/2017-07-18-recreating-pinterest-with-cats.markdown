@@ -19,7 +19,7 @@ style: |
 
 I’m not sure if Pinterest was the first website to popularize the cascading grid layout, but now I see it everywhere. If you’ve never used Pinterest, it’s a site where you can collect data-rich images that are displayed in a grid.
 
-There are a couple of Cascading grid layout libraries are available and will handle the positioning for you (like Masonry: Cascading grid layout (https://masonry.desandro.com/)), but implementing a Pinterest-like grid layout on your own is not that difficult. You can do it!
+There are a couple of Cascading grid layout libraries are available and will handle the positioning for you (like [Masonry][masonry]), but implementing a Pinterest-like grid layout on your own is not that difficult. You can do it!
 
 I’m going to use a bit of jQuery to explain how to do it, but use whatever you like. What matters is the math behind the positioning, not the front-end framework or library you use.  I’ll give you a general overview and then we can get into the implementation details with some code. 
 
@@ -163,6 +163,7 @@ If you want to look at the whole project implementation it’s [here][recreate-p
 
 Jessica 👋 
 
+[masonry]: https://masonry.desandro.com/
 [recreate-pinterest]: https://github.com/jessanettica/Recreate-Pinterest-with-cats
 
 
