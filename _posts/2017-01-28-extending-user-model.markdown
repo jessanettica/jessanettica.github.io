@@ -3,6 +3,8 @@ layout: post
 title:  "Extending Django's User Model"
 date:   2017-01-28 09:55:21 -0800
 categories: python
+image_sliders:
+  - slider1
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -17,13 +19,15 @@ style: |
   }
 ---
 
-Django’s built-in user authentication system is awesome. It handles both authentication and authorization, but for many of your projects you’ll want to extend and customize it. One of the main reasons you will want to customize the built-in system is to store more data related to the User. For example, you might want to store the user’s city, or her instagram handle. There are different ways to extend the User Model, and there is no general “best” or “worst” option. The best option will depend on your project and how far along in building it you are. Ok, so let's get to it. 
+{% include slider.html selector="slider1" %}
+
+Django’s built-in user authentication system is awesome. It handles both authentication and authorization, but for many of your projects you’ll want to extend and customize it. One of the main reasons you will want to customize the built-in system is to store more data related to the User. For example, you might want to store the user’s city, or her instagram handle. There are different ways to extend the User Model, and there is no general “best” or “worst” option. The best option will depend on your project and how far along in building it you are. Ok, so let's get to it.
 
 If you are mid-way through your project options #1 or #2 are the better options. They both extend the default User model without substituting it with your own model.
 
 ### 1. A One-to-One Link with a User Model(Profile)
 
-Best option if you are not at the very beginning of starting your project and you need to store extra information about the existing User Model that’s not related to the authentication process. Usually people that do this call the table UserProfile, but you can do you and call it whatever you want! 
+Best option if you are not at the very beginning of starting your project and you need to store extra information about the existing User Model that’s not related to the authentication process. Usually people that do this call the table UserProfile, but you can do you and call it whatever you want!
 
 {% highlight python %}
 from django.contrib.auth.models import User
@@ -53,7 +57,7 @@ Don’t forget that if you want to add your new UserProfile model’s fields to 
 
 ### 2. Using a Proxy Model
 
-This should be your game plan when you don’t need to store extra info in the database but want to add extra methods. This is model inheritance but it doesn’t create a new table in the database; the existing database schema is not affected. 
+This should be your game plan when you don’t need to store extra info in the database but want to add extra methods. This is model inheritance but it doesn’t create a new table in the database; the existing database schema is not affected.
 
 {% highlight python %}
 from django.contrib.auth.models import User
@@ -70,7 +74,7 @@ class Subscriber(User):
         ...
 {% endhighlight %}
 
-This changes the default ordering to be by first_name and assigns a custom Manager to Subscriber. `get_subscription_plan` is just an an example method. You can make whatever method you need for your project. 
+This changes the default ordering to be by first_name and assigns a custom Manager to Subscriber. `get_subscription_plan` is just an an example method. You can make whatever method you need for your project.
 
 After this `User.objects.all()` and `Subscriber.objects.all()` will query the same database table, which is kind of cool. The only difference is in the behavior defined for the Proxy Model.
 
@@ -79,7 +83,7 @@ If you are at the beginning of your project, the next two options are the better
 
 ### 3. Create a Custom User Model Extending AbstractUser
 
-This is the best option if you are down with how Django handles auth but you want to add some extra info directly in the User model, without having to create an extra class (like in #2). In an ideal world where you know what extra info your User model will need at the beginning of a project, this is the best option. It is simple and avoids the complexity of setting up #4, and it prevents the mental acrobatics you will have to do to remember how your app’s system works and why later on if you do #1 or #2. 
+This is the best option if you are down with how Django handles auth but you want to add some extra info directly in the User model, without having to create an extra class (like in #2). In an ideal world where you know what extra info your User model will need at the beginning of a project, this is the best option. It is simple and avoids the complexity of setting up #4, and it prevents the mental acrobatics you will have to do to remember how your app’s system works and why later on if you do #1 or #2.
 
 Your new custom User model is going to inherit from AbstractBaseUser
 
@@ -112,8 +116,8 @@ class BlogPost(models.Model):
 
 ### 4. Create Custom User Model Extending AbstractBaseUser
 
-You most likely don’t need this option. It is similar to #3 in that it significantly changes your database schema (so be careful!) but the new model inherits from AbstractBaseUser. People do this when their project has specific requirements relating to the authentication process. Because it allows you to change how the authentication process works and you can add extra info related to the User, it is technically the more powerful option, but it’s pretty easy to do something you actually don't want, so you have to be careful. 
+You most likely don’t need this option. It is similar to #3 in that it significantly changes your database schema (so be careful!) but the new model inherits from AbstractBaseUser. People do this when their project has specific requirements relating to the authentication process. Because it allows you to change how the authentication process works and you can add extra info related to the User, it is technically the more powerful option, but it’s pretty easy to do something you actually don't want, so you have to be careful.
 
-That’s it! 👋 
+That’s it! 👋
 
 [django-docs]: https://docs.djangoproject.com/en/1.10/ref/signals/#post-save

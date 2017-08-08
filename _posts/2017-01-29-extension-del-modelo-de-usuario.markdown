@@ -3,6 +3,8 @@ layout: post
 title:  "Extensión del Modelo de Usuario de Django"
 date:   2017-01-29 10:35:20 -0800
 categories: python
+image_sliders:
+  - slider2
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -17,7 +19,9 @@ style: |
   }
 ---
 
-El sistema de autenticación de usuarios que viene incluido con Django es genial. Maneja la autenticación y la autorización, pero para muchos de tus proyectos, querrás extenderla y personalizarla. Una de las principales razones por las que querrás personalizar el sistema integrado es almacenar más datos relacionados con el Usuario. Por ejemplo, es posible que desees almacenar la ciudad donde vive el usuario o su cuenta de Instagram. Hay diferentes maneras de extender el modelo de Usuario, y no existe una opción que sea "la mejor" o "la peor". La mejor opción dependerá en tu proyecto y que tanto hayas implementado en tu proyecto cuando decidas extender el modelo de Usuario. Ok, empecemos. 
+{% include slider.html selector="slider2" %}
+
+El sistema de autenticación de usuarios que viene incluido con Django es genial. Maneja la autenticación y la autorización, pero para muchos de tus proyectos, querrás extenderla y personalizarla. Una de las principales razones por las que querrás personalizar el sistema integrado es almacenar más datos relacionados con el Usuario. Por ejemplo, es posible que desees almacenar la ciudad donde vive el usuario o su cuenta de Instagram. Hay diferentes maneras de extender el modelo de Usuario, y no existe una opción que sea "la mejor" o "la peor". La mejor opción dependerá en tu proyecto y que tanto hayas implementado en tu proyecto cuando decidas extender el modelo de Usuario. Ok, empecemos.
 
 Si estás a medio camino en tu proyecto opcion  # 1 o opcion # 2 son las mejores opciones. Ambas extienden el modelo de usuario incluido sin sustituirlo por tu propio modelo.
 
@@ -114,6 +118,6 @@ class BlogPost(models.Model):
 
 Lo más probable es que no necesites esta opción. Es similar a # 3 en que cambia significativamente tu esquema de base de datos (¡así que ten cuidado!) Pero el nuevo modelo hereda de AbstractBaseUser. La gente hace esto cuando su proyecto tiene requisitos específicos relacionados con el proceso de autenticación. Debido a que te permite cambiar la forma en que funciona el proceso de autenticación y puede agregar información adicional relacionada con el usuario, es técnicamente la opción más poderosa, pero es bastante fácil hacer algo que realmente no quieres, por lo que debes tener cuidado .
 
-¡Eso es todo! 👋 
+¡Eso es todo! 👋
 
 [django-docs]: https://docs.djangoproject.com/en/1.10/ref/signals/#post-save
