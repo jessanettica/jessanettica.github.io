@@ -3,6 +3,8 @@ layout: post
 title:  "Cómo utilizar una API pública"
 date:   2017-05-19 9:02:22 -0800
 categories: python
+image_sliders:
+  - slider8
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -16,6 +18,8 @@ style: |
     background-color: #ffd7d7;
   }
 ---
+
+{% include slider.html selector="slider8" %}
 
 API significa Application Program Interface. La definición "oficial" de wikipedia es "un conjunto de definiciones, protocolos y herramientas para crear software para aplicaciones". Mi definición es una interfaz web que toma solicitudes y devuelve los datos (por ejemplo, json, xml, etc) que pido. Hay muchos tipos de APIs, pero este post se trata del uso de APIs públicas. El propósito de las API públicas es permitir que aplicaciones y proyectos externos consulten y obtengan datos.
 
@@ -42,7 +46,7 @@ La otra opción es el flujo de token OAuth. Esto se usa para acceder a la API en
 
 Ok, si vas a la página de la [API][api-page], baja a la parte de la pagina donde dice "Getting a Token". Si haces clic en Token personal, te llevará a la página de aplicaciones.
 
-Haz clic en "Create A New App" (Crear una nueva Aplicación), luego llena la forma que aparece y BAM! Te da una ficha (una serie de letras y números). El formulario solicita el nombre de tu aplicación. No te preocupes y pon lo que sea. Puedes regresar después y obtener otra token si se te ocurre un nombre perfecto para tu applicacion/proyecto. 
+Haz clic en "Create A New App" (Crear una nueva Aplicación), luego llena la forma que aparece y BAM! Te da una ficha (una serie de letras y números). El formulario solicita el nombre de tu aplicación. No te preocupes y pon lo que sea. Puedes regresar después y obtener otra token si se te ocurre un nombre perfecto para tu applicacion/proyecto.
 
 2
 
@@ -97,7 +101,7 @@ def sf_experience(category):
 
 Dicen que nunca deberías exponer tu token de acceso (secreto!), Por lo que lo configuré como una variable externa y obtuve el token con `os.environ.get`, pero cuando estás jugando en tu terminal, está bien. Como puedes ver, obtengo mi token y luego la pongo en los parámetros que envío con la solicitud a la API de Eventbrite para eventos en San Francisco. Una vez que tengo la respuesta, analizo el JSON para obtener información más específica sobre el evento.
 
-Jessica 👋 
+Jessica 👋
 
 [api-page]: https://www.eventbrite.com/developer/v3/api_overview/authentication/
 [eventbrite-ex]: https://github.com/jessanettica/Andarography

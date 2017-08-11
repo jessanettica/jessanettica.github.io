@@ -3,15 +3,7 @@
   captions: true
   images:
     - src: /img/1.png
-      alt: Minimum required attributes
     - data-src: /img/2.png
-      alt: Use data-src for on-demand loading
-    - data-src: /img/3.png
-      data-src-2x:
-      alt:
-    - src: /img/4.png
-      alt: Links work too
-      href: https://github.com/jekylltools/jekyll-ideal-image-slider-include
   settings:
     height: 400
     initialHeight:
@@ -28,9 +20,220 @@
   bullets: false
   captions: false
   images:
+    - src: /img/3.png
+    - data-src: /img/4.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+- selector: slider3
+  bullets: false
+  captions: false
+  images:
+    - src: /img/5.png
+    - data-src: /img/6.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+- selector: slider4
+  bullets: false
+  captions: false
+  images:
+    - src: /img/7.png
+    - data-src: /img/8.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+- selector: slider5
+  bullets: false
+  captions: false
+  images:
+    - src: /img/9.png
+    - data-src: /img/10.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
+- selector: slider6
+  bullets: false
+  captions: false
+  images:
+    - src: /img/11.png
+    - data-src: /img/12.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
+- selector: slider7
+  bullets: false
+  captions: false
+  images:
+    - src: /img/13.png
+    - data-src: /img/14.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+- selector: slider8
+  bullets: false
+  captions: false
+  images:
+    - src: /img/15.png
+    - data-src: /img/16.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+- selector: slider9
+  bullets: false
+  captions: false
+  images:
+    - src: /img/17.png
+    - data-src: /img/18.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
+- selector: slider10
+  bullets: false
+  captions: false
+  images:
+    - src: /img/19.png
+    - data-src: /img/20.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
+- selector: slider11
+  bullets: false
+  captions: false
+  images:
+    - src: /img/21.png
+    - data-src: /img/22.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
+- selector: slider12
+  bullets: false
+  captions: false
+  images:
+    - src: /img/23.png
+    - data-src: /img/24.png
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
+- selector: example1
+  bullets: false
+  captions: true
+  images:
+    - src: /img/1.png
+      alt: Minimum required attributes
+    - data-src: /img/2.png
+      alt: Use data-src for on-demand loading
+    - data-src: /img/3.png
+      data-src-2x:
+      alt:
     - src: /img/4.png
-    - data-src: /img/5.png
-    - src: /img/6.png
+      alt: Links work too
+      href: https://github.com/jekylltools/jekyll-ideal-image-slider-include
   settings:
     height: 400
     initialHeight:

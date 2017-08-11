@@ -3,6 +3,8 @@ layout: post
 title:  "Hoisting"
 date:   2017-04-14 07:08:49 -0800
 categories: javascript
+image_sliders:
+  - slider5
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -16,6 +18,8 @@ style: |
     background-color: #ffd7d7;
   }
 ---
+
+{% include slider.html selector="slider5" %}
 
 It’s super tempting to look at JavaScript code and assume it executes in order top to bottom. That’s mostly true, but not always. That “mostly” can lead to some pretty confusing behavior. It’s easy to dismiss inconsistencies in JavaScript code to the flexibility of the language, but there’s actually some pretty cool stuff going on. Unexpected execution order in your program is probably due to something called hoisting.
 
@@ -51,7 +55,7 @@ console.log(thing);
 thing=4;
 {% endhighlight %}
 
-Variable and function declarations are hoisted or “moved” up from where there are to the very top on their scope. That last bit is important. Hoisting is per scope. So if the code in the examples above were inside a function, they would be hoisted to the top of the function body, but they wouldn’t be hoisted up to the top of the file. Also worth noting is that only the declarations are hoisted and the other logic is left in place. If hoisting changed the order of everything it would be absolute chaos and you wouldn’t know what what happening when. Not cool. 
+Variable and function declarations are hoisted or “moved” up from where there are to the very top on their scope. That last bit is important. Hoisting is per scope. So if the code in the examples above were inside a function, they would be hoisted to the top of the function body, but they wouldn’t be hoisted up to the top of the file. Also worth noting is that only the declarations are hoisted and the other logic is left in place. If hoisting changed the order of everything it would be absolute chaos and you wouldn’t know what what happening when. Not cool.
 
 Ok so now that we went over simple variables let’s talk functions. Function declarations are hoisted but function expressions are not.
 
@@ -85,10 +89,10 @@ var sayHello = function printGreeting() {
 
 `sayHello` is hoisted and attached to the outside scope (probs the global scope here), so `sayHello` doesn’t cause a `ReferenceError`. But `sayHello` has no value yet so when you call it,  `sayHello`() is trying to call an undefined value which is why you get a `TypeError`.
 
-So what if you have both functions and variables? What gets hoisted first? Functions are hoisted first, then variables come after. 
+So what if you have both functions and variables? What gets hoisted first? Functions are hoisted first, then variables come after.
 
 {% highlight javascript %}
-sayHello(); 
+sayHello();
 var sayHello;
 function sayHello() {
     console.log( "hi" );
@@ -98,7 +102,7 @@ sayHello = function() {
 };
 {% endhighlight %}
 
-That prints "hi". Here’s what happened: 
+That prints "hi". Here’s what happened:
 
 {% highlight javascript %}
 function sayHello() {
@@ -115,7 +119,7 @@ sayHello = function() {
 Be careful though because while duplicate `var` declarations like the one above are pretty much ignored, function declarations **do override** previous function declarations. Checkout this nightmare:
 
 {% highlight javascript %}
-sayHello(); 
+sayHello();
 function sayHello() {
     console.log( "hi");
 }
@@ -130,5 +134,4 @@ function sayHello() {
 What prints? `"This will print because it overrides the previous function declaration" `
 So basically, do yourself a favor and don’t make duplicate functions in the same scope.  Hopefully this has been helpful and saves you a headache or two :)
 
-👋 
-
+👋

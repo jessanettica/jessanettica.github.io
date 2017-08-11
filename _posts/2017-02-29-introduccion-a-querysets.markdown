@@ -3,6 +3,8 @@ layout: post
 title:  "Introducción a los Querysets de Django"
 date:   2017-02-29 07:45:27 -0800
 categories: python
+image_sliders:
+  - slider4
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -16,6 +18,9 @@ style: |
     background-color: #ffd7d7;
   }
 ---
+
+{% include slider.html selector="slider4" %}
+
 *Que es un Queryset? Es una lista?*
 
 Eh... no pienses eso porque te vas a confundir después. Parece una lista pero no lo es.
@@ -26,7 +31,7 @@ Eh... no pienses eso porque te vas a confundir después. Parece una lista pero n
 >>> <class 'django.db.models.query.QuerySet'>
 {% endhighlight %}
 
-Lo ves? No es una lista. Piensa en un Queryset como una colección de objetos de un modelo determinado. Es básicamente una representación de una o varias filas de una base de datos que puede ser filtrada or ordenada con un comando. 
+Lo ves? No es una lista. Piensa en un Queryset como una colección de objetos de un modelo determinado. Es básicamente una representación de una o varias filas de una base de datos que puede ser filtrada or ordenada con un comando.
 
 
 &nbsp;
@@ -78,15 +83,15 @@ Primero tienes que obtener el usuario que quieres (usemos el que ya tenemos de e
 >>> Articulo.objects.filter(autor=yo)
 [<Articulo: Titulo de Ejemplo>, <Articulo: Ejemplo 2>, <Articulo: Mi Tercer Articulo!>, <Post: Cuarto Ejemplo>]
 {% endhighlight %}
-Bien hecho. 
+Bien hecho.
 
 &nbsp;
 
 *Puedes encadenar varios filtros?*
 
 {% highlight python %}
-# Regresa todos los artículos escritos después de 2014 excepto los que escribió 
-# Jessica Lopez. Ordenalos por nombre del autor, luego cronológicamente, con los mas 
+# Regresa todos los artículos escritos después de 2014 excepto los que escribió
+# Jessica Lopez. Ordenalos por nombre del autor, luego cronológicamente, con los mas
 # recientes primero.
 Articulo.objects.filter(ano_escrito__gt=2014) \
             .exclude(autor='Jessica Lopez') \
@@ -106,7 +111,7 @@ Que se pasan todo el dia en el sillon jaja :P Lo que quiere decir es que cuando 
 >>> print(z)
 {% endhighlight %}
 
-Cuántas veces crees que Django utilizó la base de datos? Se ve como si la use tres veces, no? Django la utilizo una sola vez, en la última línea cuando se imprime el queryset. Esto es genial porque hace que las cosas funcionen más rápido sin tener que utilizar la base de datos varias veces. 
+Cuántas veces crees que Django utilizó la base de datos? Se ve como si la use tres veces, no? Django la utilizo una sola vez, en la última línea cuando se imprime el queryset. Esto es genial porque hace que las cosas funcionen más rápido sin tener que utilizar la base de datos varias veces.
 
 &nbsp;
 
@@ -125,7 +130,7 @@ Un Queryset es iterable. Utiliza la base de datos la primera vez que iteran sobr
 
 #### Cortando (más o menos)
 
-Un Queryset puede ser cortado como una lista utilizando los métodos que vienen incluidos con Python (pero recuerda que un Queryset no es una lista!) Cortando un Queryset que no ha sido evaluado usualmente regresa otro Queryset que no ha sido evaluado, pero Django utilizará la base de datos si tu utilizas el parámetro del "paso" y regresara una lista. Otra cosa que no es tan genial es que cuando cortas un Queryset que no ha sido evaluado y regresa otro Queryset no evaluado ya no puedes modificar más ese Queryset (filtrar más, cambiar el orden, et cetera). 
+Un Queryset puede ser cortado como una lista utilizando los métodos que vienen incluidos con Python (pero recuerda que un Queryset no es una lista!) Cortando un Queryset que no ha sido evaluado usualmente regresa otro Queryset que no ha sido evaluado, pero Django utilizará la base de datos si tu utilizas el parámetro del "paso" y regresara una lista. Otra cosa que no es tan genial es que cuando cortas un Queryset que no ha sido evaluado y regresa otro Queryset no evaluado ya no puedes modificar más ese Queryset (filtrar más, cambiar el orden, et cetera).
 
 #### repr()
 
@@ -142,7 +147,7 @@ Esto te dara el número de Artículos que tienen un título que empieza con "Com
 
 #### list()
 
-Puedes forzar la evaluación de un Queryset llamando `list()`. La mayoría del tiempo la verdad no necesitas hacer esto. 
+Puedes forzar la evaluación de un Queryset llamando `list()`. La mayoría del tiempo la verdad no necesitas hacer esto.
 {% highlight shell %}
 >>>lista_de_articulos = list(Articulo.objects.all())
 {% endhighlight %}
@@ -155,17 +160,17 @@ Utilizar un Queryset en un contexto booleano causará que el queryset sea evalua
 
 *Ok ahora se cuando son evaluados pero no se que significa ser "evaluado".*
 
-Tienes razón! Nunca lo explique. Cuando un Queryset es evaluado significa que todas las líneas que coinciden con lo que pediste en tu comando son tomadas de la base de datos y convertidas en modelos de Django. 
+Tienes razón! Nunca lo explique. Cuando un Queryset es evaluado significa que todas las líneas que coinciden con lo que pediste en tu comando son tomadas de la base de datos y convertidas en modelos de Django.
 
 
 &nbsp;
 
 *Se guardan en memoria los Querysets?*
 
-Si! Bueno, más o menos. Son "cached" o guardados en memoria en algunas situaciones. 
+Si! Bueno, más o menos. Son "cached" o guardados en memoria en algunas situaciones.
 {% highlight python %}
 articulos = Articulo.objects.filter(texto__icontains="comida")  # ovio tengo hambre jaja
-# En la próxima línea el comando es ejecutado y guardado / "cached" 
+# En la próxima línea el comando es ejecutado y guardado / "cached"
 for articulo in articulos:
     print(articulo.titulo)
 # La memoria es utilizada la próxima vez que iteran sobre el Queryset y no hay necesidad de utilizar la base de datos.
@@ -176,7 +181,7 @@ for articulo in articulos:
 Lo mismo va cualquier vez que un Queryset es evaluado (puedes utilizar la lista que hicimos antes). Por ejemplo digamos que utilizamos un "if" antes de iterar con "for":
 
 {% highlight python %}
-articulos = Articulo.objects.filter(texto__icontains="comida") 
+articulos = Articulo.objects.filter(texto__icontains="comida")
 # El condicional `if` causa que el queryset sea evaluado
 if articulos:
     # Se utiliza lo que está guardado en memoria para la próxima iteración
@@ -187,7 +192,7 @@ if articulos:
 Pero qué tal si no quieres todos los artículos? Solo querias saber si había al menos uno, verdad? En ese caso, utilizar `exists()` es mejor.
 
 {% highlight python %}
-articulos = Articulo.objects.filter(texto__icontains="postre") 
+articulos = Articulo.objects.filter(texto__icontains="postre")
 # `exists()` previene que todo lo que está en el queryset sea guardado en memoria
 if articulos.exists():
     # Ningunas filas fueron obtenidas de la base de datos. Eso significa que ahorramos bandwidth y memoria.
@@ -196,6 +201,4 @@ if articulos.exists():
 
 &nbsp;
 
-Bueno eso es todo por ahora, pero espero pronto escribir algo sobre como optimizar comandos para Django. 👋 
-
-
+Bueno eso es todo por ahora, pero espero pronto escribir algo sobre como optimizar comandos para Django. 👋

@@ -3,6 +3,8 @@ layout: post
 title:  "Recreating Pinterest with Cats"
 date:   2017-07-18 08:08:28 -0800
 categories: python
+image_sliders:
+  - slider9
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -17,15 +19,17 @@ style: |
   }
 ---
 
+{% include slider.html selector="slider9" %}
+
 I’m not sure if Pinterest was the first website to popularize the cascading grid layout, but now I see it everywhere. If you’ve never used Pinterest, it’s a site where you can collect data-rich images that are displayed in a grid.
 
 There are a couple of Cascading grid layout libraries are available and will handle the positioning for you (like [Masonry][masonry]), but implementing a Pinterest-like grid layout on your own is not that difficult. You can do it!
 
-I’m going to use a bit of jQuery to explain how to do it, but use whatever you like. What matters is the math behind the positioning, not the front-end framework or library you use.  I’ll give you a general overview and then we can get into the implementation details with some code. 
+I’m going to use a bit of jQuery to explain how to do it, but use whatever you like. What matters is the math behind the positioning, not the front-end framework or library you use.  I’ll give you a general overview and then we can get into the implementation details with some code.
 
-Let’s get into the general overview. The pins are loaded to the page on initial page load with AJAX. After assigning the column width and the margin between the columns, you can use the window width to calculate the number of columns that will fit on the page. You use an array to store the height of each column, and the array length is how many columns there are. For example,` myColumns = [300, 340, 370]` means that there are 3 columns on the page. The first column’s height is 300, second column’s height is 340, and the third column’s height is 370. Cool, right? So then when each pin is added to the page, it is added to the shortest column and the array is updated with the new column height. The left and top position of each of the absolutely-positioned pins is determined using these height values (see `getTopPosition()` and `getLeftPosition()` below). 
+Let’s get into the general overview. The pins are loaded to the page on initial page load with AJAX. After assigning the column width and the margin between the columns, you can use the window width to calculate the number of columns that will fit on the page. You use an array to store the height of each column, and the array length is how many columns there are. For example,` myColumns = [300, 340, 370]` means that there are 3 columns on the page. The first column’s height is 300, second column’s height is 340, and the third column’s height is 370. Cool, right? So then when each pin is added to the page, it is added to the shortest column and the array is updated with the new column height. The left and top position of each of the absolutely-positioned pins is determined using these height values (see `getTopPosition()` and `getLeftPosition()` below).
 
-That’s it! It is probably a bit confusing to just read that explanation so let’s take a look at the code to see how it’s actually implemented. I added comments with numbers so that you can read the file in the order it happens in the explanation above. 
+That’s it! It is probably a bit confusing to just read that explanation so let’s take a look at the code to see how it’s actually implemented. I added comments with numbers so that you can read the file in the order it happens in the explanation above.
 
 {% highlight javascript %}
 function makeArray(len, value) {
@@ -66,7 +70,7 @@ function updateColArray(colIndex, colArray, pinHeight){
 var screenWidth = $(window).width();
 var gutter = 12;
 var numColumns = Math.floor(screenWidth / (236 + gutter));
-// 2. Make an array to represent our columns and 
+// 2. Make an array to represent our columns and
 // initialize height of all page columns to zero
 var colArray = makeArray(numColumns, 0);
 
@@ -111,7 +115,7 @@ function renderPins(resp){
       var columnIdx = getShortestColumnIndex(colArray);
       var left = getLeftPosition(columnIdx, numColumns);
       var top = getTopPosition(columnIdx, colArray);
-      // 5. Update the array that represents our columns so that 
+      // 5. Update the array that represents our columns so that
       // we can continue putting future pins in the shortest column
       colArray = updateColArray(columnIdx, colArray, pinHeight);
       // 6. Add position to the pin
@@ -161,9 +165,7 @@ def get_all_pins(request):
 If you want to look at the whole project implementation it’s [here][recreate-pinterest].
 
 
-Jessica 👋 
+Jessica 👋
 
 [masonry]: https://masonry.desandro.com/
 [recreate-pinterest]: https://github.com/jessanettica/Recreate-Pinterest-with-cats
-
-

@@ -3,6 +3,8 @@ layout: post
 title:  "Recreando Pinterest con Gatos"
 date:   2017-07-19 08:20:13 -0800
 categories: python
+image_sliders:
+  - slider10
 style: |
   .post-title {
     font-family: 'Playfair Display', serif;
@@ -16,6 +18,8 @@ style: |
     background-color: #ffd7d7;
   }
 ---
+
+{% include slider.html selector="slider10" %}
 
 No estoy segura si Pinterest fue el primer sitio web que popularizó el diseño de una cuadrícula de imágenes en cascada, pero ahora lo veo en todas partes. Si nunca has utilizado Pinterest, es un sitio donde puedes guardar colecciones de imágenes que se organizan en una cuadrícula.
 
@@ -146,8 +150,7 @@ window.onload = function () {
 
 Si quieres ver la implementación del proyecto entero esta [aquí][recreando-pinterest].
 
-Jessica 👋 
+Jessica 👋
 
 [masonry]: https://masonry.desandro.com/
 [recreando-pinterest]: https://github.com/jessanettica/Recreate-Pinterest-with-cats
-
