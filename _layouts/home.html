@@ -3,24 +3,63 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  {{ content }}
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-<!--         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <div>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <a class="post-link" href="{{ post.url | relative_url }}">
+        <li style="border-bottom: 1px solid #F0F0F0;margin-top: 30px;">
+  <!--         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+          {% if post.photos.size == 1 %}
+          <div style="
+              width: 100%;
+              display: inline-block;
+              float: left;
+              padding-bottom: 0.25rem;
+              padding-left: 0.25rem;
+              overflow: hidden;"><img src="img/beach.jpg" style="max-width: 80%;"></div>
+          {% elsif post.photos.size == 2 %}
+          <div style="
+              width: 100%;
+              display: inline-block;
+              float: left;
+              padding-bottom: 0.25rem;
+              padding-left: 0.25rem;
+              overflow: hidden;">
+              {% for photo in post.photos %}
+              <img src="{{ photo }}" {% if forloop.first %} style="max-width: 49%;" {% else %} style="max-width: 50%;" {% endif %}>
+              {% endfor %}
+            </div>
+          {% elsif post.photos.size == 3 %}
+          <div style="
+              width: 100%;
+              display: inline-block;
+              float: left;
+              padding-bottom: 0.25rem;
+              padding-left: 0.25rem;
+              overflow: hidden;">
+              {% for photo in post.photos %}
+              <img src="{{ photo }}" {% if forloop.last %} style="max-width: 32%;" {% else %} style="max-width: 33%;" {% endif %}>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <h2 style="font-size: 1.75rem;">
+            {{ post.title | escape }}
+          </h2>
+        </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <p>hello hi hi hi</p>
+  </div>
 
 <!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
+  <script type="text/javascript">
+  console.log("hi this works");
+  console.log($('.post-link'));
+  </script>
   {% include slider_scripts.html %}
   {% include analytics.html %}
+
 </div>

@@ -17,6 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
+photos: ["img/clouds.jpg"]
 ---
 
 {% include slider.html selector="slider4" %}
@@ -117,11 +118,11 @@ Cuántas veces crees que Django utilizó la base de datos? Se ve como si la use 
 
 *Entonces cuando son evaluados los Querysets si no lo son cuando son filtrados?*
 
-Un Queryset puede ser creado, filtrado, cortado, o pasado de aquí allá sin utilizar la base de datos, pero para utilizar esto a tu ventaja, tienes que saber cuando es evaluado.  
+Un Queryset puede ser creado, filtrado, cortado, o pasado de aquí allá sin utilizar la base de datos, pero para utilizar esto a tu ventaja, tienes que saber cuando es evaluado.
 
 #### Iteración
 
-Un Queryset es iterable. Utiliza la base de datos la primera vez que iteran sobre el.  
+Un Queryset es iterable. Utiliza la base de datos la primera vez que iteran sobre el.
 
 {% highlight shell %}
 >>>for articulo in Articulo.objects.all():
