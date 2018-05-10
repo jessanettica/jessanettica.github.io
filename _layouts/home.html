@@ -1,9 +1,17 @@
 ---
 layout: default
+style: |
+  .home {
+    background-color: aquamarine;
+  }
+  img {
+    display: none;
+  }
 ---
 
 <div class="home">
-  <div>
+  <div class="row">
+  <div class="col-xs-10 col-sm-6 col-lg-8">
     <ul class="post-list">
       {% for post in site.posts %}
         <a class="post-link" href="{{ post.url | relative_url }}">
@@ -16,7 +24,7 @@ layout: default
               float: left;
               padding-bottom: 0.25rem;
               padding-left: 0.25rem;
-              overflow: hidden;"><img src="img/beach.jpg" style="max-width: 80%;"></div>
+              overflow: hidden;"><img src="img/beach.jpg" ></div>
           {% elsif post.photos.size == 2 %}
           <div style="
               width: 100%;
@@ -24,9 +32,10 @@ layout: default
               float: left;
               padding-bottom: 0.25rem;
               padding-left: 0.25rem;
-              overflow: hidden;">
+              overflow: hidden;
+              white-space: nowrap;">
               {% for photo in post.photos %}
-              <img src="{{ photo }}" {% if forloop.first %} style="max-width: 49%;" {% else %} style="max-width: 50%;" {% endif %}>
+              <img src="{{ photo }}" style="max-width: 50%;">
               {% endfor %}
             </div>
           {% elsif post.photos.size == 3 %}
@@ -36,9 +45,10 @@ layout: default
               float: left;
               padding-bottom: 0.25rem;
               padding-left: 0.25rem;
-              overflow: hidden;">
+              overflow: hidden;
+              white-space: nowrap;">
               {% for photo in post.photos %}
-              <img src="{{ photo }}" {% if forloop.last %} style="max-width: 32%;" {% else %} style="max-width: 33%;" {% endif %}>
+              <img src="{{ photo }}" style="max-width: 33%;">
               {% endfor %}
             </div>
           {% endif %}
@@ -50,15 +60,13 @@ layout: default
       {% endfor %}
     </ul>
   </div>
-  <div>
-    <p>hello hi hi hi</p>
-  </div>
+  <div class="col-xs-2 col-sm-6 col-lg-4" style="background-color:lavender;">HELOOOOOOOOOO</div>
+</div>
 
 <!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
-  <script type="text/javascript">
-  console.log("hi this works");
-  console.log($('.post-link'));
-  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   {% include slider_scripts.html %}
   {% include analytics.html %}
 

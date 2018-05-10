@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/berries.jpg", "img/citrus.jpg"]
+photos: ["img/berries.jpg", "img/berries.jpg"]
 ---
 
 {% include slider.html selector="slider10" %}
