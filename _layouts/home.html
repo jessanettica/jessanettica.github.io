@@ -60,7 +60,38 @@ style: |
       {% endfor %}
     </ul>
   </div>
-  <div class="col-xs-2 col-sm-6 col-lg-4" style="background-color:lavender;">HELOOOOOOOOOO</div>
+  <div class="col-xs-2 col-sm-6 col-lg-4">
+    <div style="
+    font-family: Calibri, sans-serif;
+    word-spacing: 0.1em;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align:center">Keep In Touch
+    <ul style="margin:0">
+    {% if site.email %}
+    <li style="list-style-type: none;display:inline-block;margin:10px;">
+      <a href="mailto:{{ site.email }}">
+        <i class="far fa-envelope"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.instagram_username %}
+    <li style="list-style-type: none;display:inline-block;margin:10px;">
+      <a href="https://instagram.com/{{ site.instagram_username }}">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.twitter_username %}
+    <li style="list-style-type: none;display:inline-block;margin:10px;">
+      <a href="https://twitter.com/{{ site.twitter_username }}">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+  </div>
+  </div>
 </div>
 
 <!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
