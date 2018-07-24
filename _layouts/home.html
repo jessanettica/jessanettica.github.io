@@ -24,7 +24,10 @@ style: |
               float: left;
               padding-bottom: 0.25rem;
               padding-left: 0.25rem;
-              overflow: hidden;"><img src="img/beach.jpg" ></div>
+              overflow: hidden;">
+              {% for photo in post.photos %}
+              <img src="{{ photo }}" >
+              {% endfor %}</div>
           {% elsif post.photos.size == 2 %}
           <div style="
               width: 100%;
