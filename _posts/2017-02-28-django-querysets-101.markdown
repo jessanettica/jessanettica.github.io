@@ -2,7 +2,7 @@
 layout: post
 title:  "Django QuerySets 101"
 date:   2017-02-28 09:55:21 -0800
-categories: python
+tags: snacks
 image_sliders:
   - slider3
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/berries.jpg", "img/cacti.jpg"]
+photos: ["/img/berries.jpg", "/img/cacti.jpg"]
 ---
 
 {% include slider.html selector="slider3" %}

@@ -2,7 +2,7 @@
 layout: post
 title:  "Recreating Pinterest with Cats"
 date:   2017-07-18 08:08:28 -0800
-categories: python
+tags: code
 image_sliders:
   - slider9
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/car.jpg"]
+photos: ["/img/car.jpg"]
 ---
 
 {% include slider.html selector="slider9" %}

@@ -42,8 +42,15 @@
   </style>
   {% endif %}
 
-  {% include slider_styles.html %}
+  {% if site.tags != "" %}
+  {% include tag.html %}
+  {% endif %}
 
+  {% if site.categories != "" %}
+  {% include category.html %}
+  {% endif %}
+
+  {% include slider_styles.html %}
   {% if jekyll.environment == 'production' and site.google_analytics %}
   {% include google-analytics.html %}
   {% endif %}

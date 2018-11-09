@@ -2,7 +2,7 @@
 layout: post
 title:  "Recreando Pinterest con Gatos"
 date:   2017-07-19 08:20:13 -0800
-categories: python
+tags: code
 image_sliders:
   - slider10
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/party_frenchie.jpg", "img/rainbow_cake.jpg", "img/dog_at_party.jpg"]
+photos: ["/img/party_frenchie.jpg", "/img/rainbow_cake.jpg", "/img/dog_at_party.jpg"]
 ---
 
 {% include slider.html selector="slider10" %}

@@ -22,11 +22,15 @@ url: "https://holahuman.com" # the base hostname & protocol for your site, e.g. 
 instagram_username: holahuman
 twitter_username:  helloHolaHuman
 
+paginate: 5
+paginate_path: "/_site/page:num/"
+
 # Build settings
 markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock

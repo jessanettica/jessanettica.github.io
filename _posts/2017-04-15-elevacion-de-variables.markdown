@@ -2,7 +2,7 @@
 layout: post
 title:  "Elevación de las variables"
 date:   2017-04-15 07:22:28 -0800
-categories: javascript
+tags: code
 image_sliders:
   - slider6
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/reds.jpg", "img/mug.jpg"]
+photos: ["/img/reds.jpg", "/img/mug.jpg"]
 ---
 
 {% include slider.html selector="slider6" %}

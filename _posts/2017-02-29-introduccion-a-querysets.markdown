@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducción a los Querysets de Django"
 date:   2017-02-29 07:45:27 -0800
-categories: python
+tags: fitness
 image_sliders:
   - slider4
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/clouds.jpg"]
+photos: ["/img/clouds.jpg"]
 ---
 
 {% include slider.html selector="slider4" %}

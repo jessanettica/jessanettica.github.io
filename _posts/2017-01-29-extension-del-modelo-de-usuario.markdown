@@ -2,7 +2,8 @@
 layout: post
 title:  "Extensión del Modelo de Usuario de Django"
 date:   2017-01-29 10:35:20 -0800
-categories: python
+category: Code
+tags: beauty
 image_sliders:
   - slider2
 style: |
@@ -17,7 +18,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/beauty_products.jpg", "img/lipstick.jpg"]
+photos: ["/img/beauty_products.jpg", "/img/lipstick.jpg"]
 ---
 
 {% include slider.html selector="slider2" %}

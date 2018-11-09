@@ -2,7 +2,7 @@
 layout: post
 title:  "Using a Public API"
 date:   2017-05-18 8:25:10 -0800
-categories: python
+tags: code
 image_sliders:
   - slider7
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/headphones.jpg"]
+photos: ["/img/headphones.jpg"]
 ---
 
 {% include slider.html selector="slider7" %}

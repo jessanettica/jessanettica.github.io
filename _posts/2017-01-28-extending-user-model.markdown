@@ -2,7 +2,8 @@
 layout: post
 title:  "Extending Django's User Model"
 date:   2017-01-28 09:55:21 -0800
-categories: python
+category: Code
+tags: code
 image_sliders:
   - slider1
 style: |
@@ -17,7 +18,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/ocean.jpg"]
+photos: ["/img/ocean.jpg"]
 ---
 
 {% include slider.html selector="slider1" %}

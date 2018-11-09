@@ -2,7 +2,7 @@
 layout: post
 title:  "Cómo utilizar una API pública"
 date:   2017-05-19 9:02:22 -0800
-categories: python
+tags: code
 image_sliders:
   - slider8
 style: |
@@ -17,7 +17,7 @@ style: |
   pre, code {
     background-color: #ffd7d7;
   }
-photos: ["img/lipstick_above.jpg", "img/makeup_brush.jpg"]
+photos: ["/img/lipstick_above.jpg", "/img/makeup_brush.jpg"]
 ---
 
 {% include slider.html selector="slider8" %}
