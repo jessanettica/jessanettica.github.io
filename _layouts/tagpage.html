@@ -1,0 +1,99 @@
+---
+layout: default
+---
+<h1>{{ page.tag }}</h1>
+<div class="home">
+  <div class="row">
+  <div class="col-xs-10 col-sm-6 col-lg-8">
+
+    <ul class="post-list">
+      {% for post in site.tags[page.tag] %}
+        <a class="post-link" href="{{ post.url | relative_url }}">
+        <li style="border-bottom: 1px solid #F0F0F0;margin-top: 30px;">
+  <!--         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+          {% if post.photos.size == 1 %}
+          <div style="
+              width: 100%;
+              display: inline-block;
+              float: left;
+              padding-bottom: 0.25rem;
+              padding-left: 0.25rem;
+              overflow: hidden;">
+              {% for photo in post.photos %}
+              <img src="{{ photo }}" >
+              {% endfor %}</div>
+          {% elsif post.photos.size == 2 %}
+          <div style="
+              width: 100%;
+              display: inline-block;
+              float: left;
+              padding-bottom: 0.25rem;
+              padding-left: 0.25rem;
+              overflow: hidden;
+              white-space: nowrap;">
+              {% for photo in post.photos %}
+              <img src="{{ photo }}" style="max-width: 50%;">
+              {% endfor %}
+            </div>
+          {% elsif post.photos.size == 3 %}
+          <div style="
+              width: 100%;
+              display: inline-block;
+              float: left;
+              padding-bottom: 0.25rem;
+              padding-left: 0.25rem;
+              overflow: hidden;
+              white-space: nowrap;">
+              {% for photo in post.photos %}
+              <img src="{{ photo }}" style="max-width: 33%;">
+              {% endfor %}
+            </div>
+          {% endif %}
+          <h2 style="font-size: 1.75rem;">
+            {{ post.title | escape }}
+          </h2>
+        </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-xs-2 col-sm-6 col-lg-4">
+    <div style="
+    font-family: Calibri, sans-serif;
+    word-spacing: 0.1em;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align:center">Keep In Touch
+    <ul style="margin:0">
+    {% if site.email %}
+    <li style="list-style-type: none;display:inline-block;margin:10px;">
+      <a href="mailto:{{ site.email }}">
+        <i class="far fa-envelope"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.instagram_username %}
+    <li style="list-style-type: none;display:inline-block;margin:10px;">
+      <a href="https://instagram.com/{{ site.instagram_username }}">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.twitter_username %}
+    <li style="list-style-type: none;display:inline-block;margin:10px;">
+      <a href="https://twitter.com/{{ site.twitter_username }}">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+  </div>
+  </div>
+</div>
+
+<!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  {% include slider_scripts.html %}
+  {% include analytics.html %}
+
+</div>
