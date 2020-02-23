@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducción a los Querysets de Django"
 date:   2017-02-29 07:45:27 -0800
-tags: ecommerce
+tags: travel
 image_sliders:
   - slider4
 style: |
