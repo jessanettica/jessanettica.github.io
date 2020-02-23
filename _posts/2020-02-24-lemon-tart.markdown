@@ -44,7 +44,7 @@ Basically, these are a take on a tart that I tried at Bouchon years ago. Over th
 2 eggs, cold
 2 egg yolks, cold
 ½ cup sugar
-½ cup fresh lemon juice (I like using Meyer, but any lemons will do)
+½ cup fresh lemon juice (I like using Meyer, but any lemons will work)
 3 tablespoons (1.5 ounces) cold unsalted butter, cut into small pieces
 {% endhighlight %}
 
