@@ -5,3 +5,18 @@
 .post-content p {
     margin-top: 20px;
 }
+
+.post-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.post-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+}
+
+.post-content ul {
+    font-family: "Pontano Sans", sans-serif;
+    font-size: 17px;
+}

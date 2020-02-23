@@ -12,7 +12,7 @@ style: |
   }
   .post-content p {
     font-family: 'Pontano Sans', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
   }
   pre, code {
     background-color: #ffd7d7;
