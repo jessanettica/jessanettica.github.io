@@ -2,6 +2,11 @@
 layout: default
 
 ---
+<ul style="margin:0;">
+{% for tag in site.tags %}
+    <li style="font-family: 'Playfair Display', serif;display: inline-block;vertical-align: middle;padding: 0 0.5rem;"><a style="color:inherit;" href="/category/{{ tag[0] }}">{{ tag[0] }} </a></li>
+{% endfor %}
+</ul>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
