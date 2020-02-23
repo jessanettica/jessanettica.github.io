@@ -2,7 +2,7 @@
 layout: post
 title:  "Django QuerySets 101"
 date:   2017-02-28 09:55:21 -0800
-tags: payments
+tags: code
 image_sliders:
   - slider3
 style: |

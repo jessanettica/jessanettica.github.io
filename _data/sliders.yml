@@ -220,6 +220,25 @@
     nextNavSelector:
 
 
+
+- selector: lemontart
+  bullets: false
+  captions: false
+  images:
+    - src: /img/lemontart.jpg
+  settings:
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration:
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+
 - selector: example1
   bullets: false
   captions: true
