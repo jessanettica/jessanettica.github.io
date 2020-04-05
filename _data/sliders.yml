@@ -167,8 +167,7 @@
   bullets: false
   captions: false
   images:
-    - src: /img/19.png
-    - data-src: /img/20.png
+    - src: /img/sibsicecream.jpg
   settings:
     height: 400
     initialHeight:
