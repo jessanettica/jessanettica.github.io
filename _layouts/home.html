@@ -13,109 +13,109 @@ style: |
 
 <div class="home">
   <div class="row">
-  <div class="col-xs-10 col-sm-6 col-lg-8">
-    <ul style="margin:0;">
-    {% for tag in site.tags %}
-        <li style="font-family: 'Playfair Display', serif;display: inline-block;vertical-align: middle;padding: 0 0.5rem;"><a style="color:inherit;" href="/category/{{ tag[0] }}">{{ tag[0] }} </a></li>
-    {% endfor %}
-    </ul>
-
-    <ul class="post-list">
-      {% for post in paginator.posts %}
-        <a class="post-link" href="{{ post.url | relative_url }}">
-        <li style="border-bottom: 1px solid #F0F0F0;margin-top: 30px;">
-  <!--         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
-          {% if post.photos.size == 1 %}
-          <div style="
-              width: 100%;
-              display: inline-block;
-              float: left;
-              padding-bottom: 0.25rem;
-              padding-left: 0.25rem;
-              overflow: hidden;">
-              {% for photo in post.photos %}
-              <img src="{{ photo }}" >
-              {% endfor %}</div>
-          {% elsif post.photos.size == 2 %}
-          <div style="
-              width: 100%;
-              display: inline-block;
-              float: left;
-              padding-bottom: 0.25rem;
-              padding-left: 0.25rem;
-              overflow: hidden;
-              white-space: nowrap;">
-              {% for photo in post.photos %}
-              <img src="{{ photo }}" style="max-width: 50%;">
-              {% endfor %}
-            </div>
-          {% elsif post.photos.size == 3 %}
-          <div style="
-              width: 100%;
-              display: inline-block;
-              float: left;
-              padding-bottom: 0.25rem;
-              padding-left: 0.25rem;
-              overflow: hidden;
-              white-space: nowrap;">
-              {% for photo in post.photos %}
-              <img src="{{ photo }}" style="max-width: 33%;">
-              {% endfor %}
-            </div>
-          {% endif %}
-          <h2 style="font-size: 1.75rem;">
-            {{ post.title | escape }}
-          </h2>
-        </li>
-        </a>
+    <div class="col-xs-10 col-sm-6 col-lg-8">
+      <ul style="margin:0;">
+      {% for tag in site.tags %}
+          <li style="font-family: 'Playfair Display', serif;display: inline-block;vertical-align: middle;padding: 0 0.5rem;"><a style="color:inherit;" href="/category/{{ tag[0] }}">{{ tag[0] }} </a></li>
       {% endfor %}
-    </ul>
-    <div class="pagination" style="margin: 8px;">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
-    {% endif %}
+      </ul>
 
-    <span class="page_number" style="margin-right: 10px;margin-left: 10px;">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      <ul class="post-list">
+        {% for post in paginator.posts %}
+          <a class="post-link" href="{{ post.url | relative_url }}">
+          <li style="border-bottom: 1px solid #F0F0F0;margin-top: 30px;">
+    <!--         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+            {% if post.photos.size == 1 %}
+            <div style="
+                width: 100%;
+                display: inline-block;
+                float: left;
+                padding-bottom: 0.25rem;
+                padding-left: 0.25rem;
+                overflow: hidden;">
+                {% for photo in post.photos %}
+                <img src="{{ photo }}" >
+                {% endfor %}</div>
+            {% elsif post.photos.size == 2 %}
+            <div style="
+                width: 100%;
+                display: inline-block;
+                float: left;
+                padding-bottom: 0.25rem;
+                padding-left: 0.25rem;
+                overflow: hidden;
+                white-space: nowrap;">
+                {% for photo in post.photos %}
+                <img src="{{ photo }}" style="max-width: 50%;">
+                {% endfor %}
+              </div>
+            {% elsif post.photos.size == 3 %}
+            <div style="
+                width: 100%;
+                display: inline-block;
+                float: left;
+                padding-bottom: 0.25rem;
+                padding-left: 0.25rem;
+                overflow: hidden;
+                white-space: nowrap;">
+                {% for photo in post.photos %}
+                <img src="{{ photo }}" style="max-width: 33%;">
+                {% endfor %}
+              </div>
+            {% endif %}
+            <h2 style="font-size: 1.75rem;">
+              {{ post.title | escape }}
+            </h2>
+          </li>
+          </a>
+        {% endfor %}
+      </ul>
+      <div class="pagination" style="margin: 8px;">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
+      {% endif %}
 
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
-    {% endif %}
+      <span class="page_number" style="margin-right: 10px;margin-left: 10px;">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+      {% endif %}
+      </div>
+
     </div>
-
+    <div class="col-xs-2 col-sm-6 col-lg-4">
+      <div style="
+      font-family: Calibri, sans-serif;
+      word-spacing: 0.1em;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-align:center">Keep In Touch
+      <ul style="margin:0">
+      {% if site.email %}
+      <li style="list-style-type: none;display:inline-block;margin:10px;">
+        <a href="mailto:{{ site.email }}">
+          <i class="far fa-envelope"></i>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.instagram_username %}
+      <li style="list-style-type: none;display:inline-block;margin:10px;">
+        <a href="https://instagram.com/{{ site.instagram_username }}">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.twitter_username %}
+      <li style="list-style-type: none;display:inline-block;margin:10px;">
+        <a href="https://twitter.com/{{ site.twitter_username }}">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    </div>
+    </div>
   </div>
-  <div class="col-xs-2 col-sm-6 col-lg-4">
-    <div style="
-    font-family: Calibri, sans-serif;
-    word-spacing: 0.1em;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-align:center">Keep In Touch
-    <ul style="margin:0">
-    {% if site.email %}
-    <li style="list-style-type: none;display:inline-block;margin:10px;">
-      <a href="mailto:{{ site.email }}">
-        <i class="far fa-envelope"></i>
-      </a>
-    </li>
-    {% endif %}
-    {% if site.instagram_username %}
-    <li style="list-style-type: none;display:inline-block;margin:10px;">
-      <a href="https://instagram.com/{{ site.instagram_username }}">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    {% endif %}
-    {% if site.twitter_username %}
-    <li style="list-style-type: none;display:inline-block;margin:10px;">
-      <a href="https://twitter.com/{{ site.twitter_username }}">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    {% endif %}
-  </ul>
-  </div>
-  </div>
-</div>
 
 <!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

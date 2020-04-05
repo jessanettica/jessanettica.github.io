@@ -2,25 +2,71 @@
 layout: default
 
 ---
-<ul style="margin:0;">
-{% for tag in site.tags %}
-    <li style="font-family: 'Playfair Display', serif;display: inline-block;vertical-align: middle;padding: 0 0.5rem;"><a style="color:inherit;" href="/category/{{ tag[0] }}">{{ tag[0] }} </a></li>
-{% endfor %}
-</ul>
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+<div class="home">
+  <div class="row">
+      <div class="col-xs-10 col-sm-6 col-lg-8">
+        <ul style="margin:0;">
+        {% for tag in site.tags %}
+            <li style="font-family: 'Playfair Display', serif;display: inline-block;vertical-align: middle;padding: 0 0.5rem;"><a style="color:inherit;" href="/category/{{ tag[0] }}">{{ tag[0] }} </a></li>
+        {% endfor %}
+        </ul>
+        <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+          <p class="post-meta">{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+        </header>
+        <div class="post-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+      </div>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+  <div class="col-xs-2 col-sm-6 col-lg-4">
+      <div style="
+      font-family: Calibri, sans-serif;
+      word-spacing: 0.1em;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-align:center">Keep In Touch
+      <ul style="margin:0">
+      {% if site.email %}
+      <li style="list-style-type: none;display:inline-block;margin:10px;">
+        <a href="mailto:{{ site.email }}">
+          <i class="far fa-envelope"></i>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.instagram_username %}
+      <li style="list-style-type: none;display:inline-block;margin:10px;">
+        <a href="https://instagram.com/{{ site.instagram_username }}">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.twitter_username %}
+      <li style="list-style-type: none;display:inline-block;margin:10px;">
+        <a href="https://twitter.com/{{ site.twitter_username }}">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    </div>
   </div>
+  </div>
+</div>
+
+
 
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %}
+  <style type="text/css">
+    .wrapper {
+      max-width: 1000px;
+    }
+  </style>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
