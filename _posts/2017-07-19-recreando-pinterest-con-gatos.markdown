@@ -2,7 +2,7 @@
 layout: post
 title:  "Recreando Pinterest con Gatos"
 date:   2017-07-19 08:20:13 -0800
-tags: code
+tags: beauty travel
 image_sliders:
   - slider10
 style: |
